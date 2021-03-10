@@ -20,17 +20,17 @@ jobs:
     
     - uses: montudor/action-zip@v0.1.1
       with:
-        args: zip -r -9  release.zip ./bin/ ./config/ ./mods/ ./README.md
+        args: zip -r -9  galactastruct.zip ./bin/ ./config/ ./mods/ ./README.md
     
     - name: Upload release.zip
       uses: actions/upload-artifact@v2.2.2
       with:
         name: galactastruct.zip
-        path: release.zip
+        path: galactastruct.zip
     
     - uses: ncipollo/release-action@v1
       if: ${{ github.event_name == 'tag' }}
       with:
-        artifacts: "release.zip"
+        artifacts: "galactastruct.zip"
         token: ${{ secrets.GITHUB_TOKEN }}
         
