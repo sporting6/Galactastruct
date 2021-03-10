@@ -14,6 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+        lfs: true
     
     - run: pwd; ls
     - run: echo $GITHUB_WORKSPACE; ls $GITHUB_WORKSPACE 
