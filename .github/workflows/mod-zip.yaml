@@ -29,7 +29,7 @@ jobs:
         path: galactastruct.zip
     
     - uses: ncipollo/release-action@v1
-      if: ${{ github.event_name == 'tag' }}
+      if: startsWith(github.ref, 'refs/tags/')
       with:
         artifacts: "galactastruct.zip"
         token: ${{ secrets.GITHUB_TOKEN }}
