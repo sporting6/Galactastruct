@@ -20,7 +20,7 @@ jobs:
     
     - uses: montudor/action-zip@v0.1.1
       with:
-        args: zip -r release.zip .
+        args: zip -r -9  release.zip ./bin/ ./config/ ./mods/ ./README.md
     
     - name: Upload release.zip
       uses: actions/upload-artifact@v2.2.2
