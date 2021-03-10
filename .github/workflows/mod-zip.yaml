@@ -15,6 +15,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
+    - run: pwd; ls
+    - run: echo $GITHUB_WORKSPACE; ls $GITHUB_WORKSPACE 
+    
     - uses: montudor/action-zip@v0.1.1
       with:
         args: zip -qq -r release.zip . -i $GITHUB_WORKSPACE
