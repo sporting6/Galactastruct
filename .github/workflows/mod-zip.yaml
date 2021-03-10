@@ -16,8 +16,8 @@ jobs:
     - uses: actions/checkout@v2
     
     - uses: montudor/action-zip@v0.1.1
-        with:
-          args: zip -qq -r release.zip ./*
+      with:
+        args: zip -qq -r release.zip ./*
     
     - uses: ncipollo/release-action@v1
       if: ${{ github.event_name == 'tag' }}
