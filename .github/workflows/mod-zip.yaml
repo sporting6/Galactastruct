@@ -19,6 +19,12 @@ jobs:
       with:
         args: zip -qq -r release.zip . -i $GITHUB_WORKSPACE
     
+    - name: Upload release.zip
+      uses: actions/upload-artifact@v2.2.2
+      with:
+        name: galactastruct.zip
+        path: release.zip
+    
     - uses: ncipollo/release-action@v1
       if: ${{ github.event_name == 'tag' }}
       with:
