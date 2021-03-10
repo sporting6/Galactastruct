@@ -2,8 +2,11 @@ name: Release
 
 on: 
   push:
+    branches:
+    - '**'
     tags:
     - '*'
+  pull_request:
 
 jobs:
 
@@ -17,6 +20,7 @@ jobs:
           args: zip -qq -r release.zip ./*
     
     - uses: ncipollo/release-action@v1
+      if: ${{ github.event_name == 'tag' }}
       with:
         artifacts: "release.zip"
         token: ${{ secrets.GITHUB_TOKEN }}
