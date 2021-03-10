@@ -17,7 +17,7 @@ jobs:
     
     - uses: montudor/action-zip@v0.1.1
       with:
-        args: zip -qq -r release.zip ./*
+        args: zip -qq -r release.zip $GITHUB_WORKSPACE
     
     - uses: ncipollo/release-action@v1
       if: ${{ github.event_name == 'tag' }}
